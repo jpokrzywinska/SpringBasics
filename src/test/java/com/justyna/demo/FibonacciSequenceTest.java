@@ -16,16 +16,30 @@ import static org.assertj.core.api.Java6Assertions.assertThat;
 public class FibonacciSequenceTest {
     @Autowired
     FibonacciSequenceService fibonacciSequenceService;
+
     @Test
-    public void checkSuccessfullyFibonacciNumber (){
+    public void checkSuccessfullyFibonacciNumber() {
 
         //given
-        int number =4;
+        int number = 2;
 
         //when
-        int result = fibonacciSequenceService.computeFibonacciNumber(number);
+        int result = fibonacciSequenceService.computeFibonacciNumberIterative(number);
 
         //then
-        assertThat(result).isEqualTo(3);
+        assertThat(result).isEqualTo(1);
+    }
+
+    @Test
+    public void checkSuccessfullyFibonacciNumberRekursive() {
+        //given
+        int number = 9;
+
+        //when
+        int result2 = fibonacciSequenceService.computeFibonacciNumberRekursive(number);
+
+        //then
+
+        assertThat(result2).isEqualTo(34);
     }
 }
