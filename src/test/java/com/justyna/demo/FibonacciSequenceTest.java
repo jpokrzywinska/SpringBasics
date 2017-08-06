@@ -17,9 +17,9 @@ public class FibonacciSequenceTest {
     @Autowired
     FibonacciSequenceService fibonacciSequenceService;
 
-	//todo There is a better way to describe this testcase
+
     @Test
-    public void checkSuccessfullyFibonacciNumber() {
+    public void shouldSuccessfullyComputeFibonacciNumberIterative() {
 
         //given
         int number = 2;
@@ -30,17 +30,29 @@ public class FibonacciSequenceTest {
         //then
         assertThat(result).isEqualTo(1);
     }
-	//todo There is a better way to describe this testcase
+
     @Test
-    public void checkSuccessfullyFibonacciNumberRekursive() {
+    public void shouldSuccessfullyComputeFibonacciNumberRecursive() {
         //given
         int number = 9;
 
         //when
-        int result2 = fibonacciSequenceService.computeFibonacciNumberRekursive(number);
+        int result2 = fibonacciSequenceService.computeFibonacciNumberRecursive(number);
 
         //then
 
         assertThat(result2).isEqualTo(34);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldThrowExceptionWhenNumberIsNegativeValue() {
+
+        //given
+        int number = -4;
+
+        //when
+        int result = fibonacciSequenceService.computeFibonacciNumberRecursive(number);
+
+
     }
 }

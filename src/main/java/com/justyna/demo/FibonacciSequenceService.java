@@ -28,17 +28,16 @@ public class FibonacciSequenceService {
 
         return result;
     }
-	//todo there is no such a word "rekursive"
-    public int computeFibonacciNumberRekursive(int number) {
-        //todo I would consider using if else
-		//todo What if someone provides negative value as a number? 
-		if (number == 0) {
+
+    public int computeFibonacciNumberRecursive(int number) {
+        if (number < 0) {
+            throw new IllegalArgumentException();
+        } else if (number == 0) {
             return 0;
-        }
-        if (number == 1) {
+        } else if (number == 1) {
             return 1;
         }
-        return computeFibonacciNumberRekursive(number - 1) + computeFibonacciNumberRekursive(number - 2);
+        return computeFibonacciNumberRecursive(number - 1) + computeFibonacciNumberRecursive(number - 2);
 
     }
 }
