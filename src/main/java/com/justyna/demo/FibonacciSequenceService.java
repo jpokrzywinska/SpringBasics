@@ -28,9 +28,11 @@ public class FibonacciSequenceService {
 
         return result;
     }
-
+	//todo there is no such a word "rekursive"
     public int computeFibonacciNumberRekursive(int number) {
-        if (number == 0) {
+        //todo I would consider using if else
+		//todo What if someone provides negative value as a number? 
+		if (number == 0) {
             return 0;
         }
         if (number == 1) {

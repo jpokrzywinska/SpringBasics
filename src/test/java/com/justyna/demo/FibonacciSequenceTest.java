@@ -17,6 +17,7 @@ public class FibonacciSequenceTest {
     @Autowired
     FibonacciSequenceService fibonacciSequenceService;
 
+	//todo There is a better way to describe this testcase
     @Test
     public void checkSuccessfullyFibonacciNumber() {
 
@@ -29,7 +30,7 @@ public class FibonacciSequenceTest {
         //then
         assertThat(result).isEqualTo(1);
     }
-
+	//todo There is a better way to describe this testcase
     @Test
     public void checkSuccessfullyFibonacciNumberRekursive() {
         //given
